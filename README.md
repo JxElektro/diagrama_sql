@@ -21,3 +21,4 @@ date.public chk_our < * a * > Room_date.public = el check out puede variar lo qu
 room.private id < * a 1 > room.public = porque muchas habitaciones pueden tener solo 1 info privada
 room.private cleaning_by < 1 a 1 > = porque cada habitacion fue hecha por 1 camarera
 room.private cleaning_status < 1 a 1 > = porque cada habitacion puede ser hecha una sola vez
+.
