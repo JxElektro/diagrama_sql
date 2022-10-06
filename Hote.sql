@@ -87,10 +87,19 @@ ALTER TABLE "room"."private" ADD FOREIGN KEY ("cleaning_status") REFERENCES "roo
 
 ALTER TABLE "room"."private" ADD FOREIGN KEY ("cleaning_by") REFERENCES "room_maid"."private" ("name");
 
-ALTER TABLE "room"."public" ADD FOREIGN KEY ("total_price") REFERENCES "room_date"."public" ("total_days");
+ALTER TABLE "room_date"."public" ADD FOREIGN KEY ("total_days") REFERENCES "room"."public" ("total_price");
 
-ALTER TABLE "room"."public" ADD FOREIGN KEY ("total_price") REFERENCES "room_date"."public" ("price_day");
+ALTER TABLE "room_date"."public" ADD FOREIGN KEY ("price_day") REFERENCES "room"."public" ("total_price");
 
 ALTER TABLE "room_date"."public" ADD FOREIGN KEY ("total_days") REFERENCES "date"."public" ("chk_in");
 
-ALTER TABLE "room_date"."public" ADD FOREIGN KEY ("total_days") REFERENCES "date"."public" ("chk_out");
+CREATE TABLE "public_public(2)" (
+  "public_chk_out" datetime NOT NULL,
+  "public_total_days" integer NOT NULL,
+  PRIMARY KEY ("public_chk_out", "public_total_days")
+);
+
+ALTER TABLE "public_public(2)" ADD FOREIGN KEY ("public_chk_out") REFERENCES "date"."public" ("chk_out");
+
+ALTER TABLE "public_public(2)" ADD FOREIGN KEY ("public_total_days") REFERENCES "room_date"."public" ("total_days");
+
