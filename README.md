@@ -4,6 +4,9 @@ https://dbdiagram.io/d/633e2826f0018a1c5fa37a7b
 
 ![database](https://user-images.githubusercontent.com/107572992/194345789-7c2ee5ad-24df-4769-adf1-64e1c034eb99.png)
 
+Un diagrama de un hotel que permite llevar el control de la cuenta de los huespedes, el estado de la habitacion y que camarera la hizo, tambien basado en la fecha de entrada y salida calcular el saldo a pagar.
+
+
 Relaciones creadas
 
 Guest.public ID < * a 1> Guest.private ID =  muchos huespedes pueden tener solo 1 informacion privada
